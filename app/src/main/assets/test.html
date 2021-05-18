@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <style>
+      body {
+        text-align:center;
+      }
+    </style>
+</head>
+
+<body>
+    <button onclick="fetchLocation()">Get location</button>
+
+    <h3>WebView</h3>
+    <p id="yyy">Android Text</p>
+    <div><input id="xxx" type="text"></div>
+    <br>
+    <div><button onclick="sendMsg()">Send to Android</button></div>
+    <br>
+    <div><button onclick="showToast()">Send Toast to App </button></div>
+
+    <script>
+        function editText(s) {
+            document.getElementById('yyy').innerText = s;
+        }
+        function sendMsg() {
+            AndroidFunction.getMessage(document.getElementById('xxx').value);
+            document.getElementById('xxx').value = "";
+        }
+
+        function showToast() {
+            AndroidFunction.showToast("Toast from Web");
+        }
+
+        var tipsEle = document.getElementById('tips')
+        function fetchLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError)
+            } else {
+                alert('Current devices do not support positioning!')
+            }
+        }
+        function onGeoSuccess(event){
+            alert("Success: " + event.coords.latitude + ", " + event.coords.longitude)
+        }
+        function onGeoError(event){
+            alert("Error code " + event.code + ". " + event.message)
+        }
+    </script>
+
+
+</body>
