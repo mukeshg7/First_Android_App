@@ -41,4 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, FragmentActivity.class);
         startActivity(i);
     }
+
+    public void JSfun(View v) {
+        Intent i = new Intent(this, JSWebViewActivity.class);
+        startActivity(i);
+    }
 }

@@ -111,7 +111,7 @@ public class WebViewActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private class notRedirectToBrowser extends WebViewClient {
+    static class notRedirectToBrowser extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             return false;
