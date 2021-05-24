@@ -13,17 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-        <activity android:name=".JSWebViewActivity"></activity>
+        <activity android:name=".WebViewFunctionActivity"
+                  android:parentActivityName=".MainActivity"
+                  android:windowSoftInputMode="stateVisible|adjustPan">
+        </activity>
+        <activity
+            android:name=".JSWebViewActivity"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".FragmentActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".WebViewActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DisplayNameActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
