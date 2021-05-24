@@ -7,8 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
+import android.webkit.ValueCallback;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -29,13 +31,13 @@ public class JSWebViewActivity extends AppCompatActivity {
         myJSWebView.addJavascriptInterface(new JavaScriptInterface(this), "AndroidFunction");
 
         String url = "file:///android_asset/test.html";
-        String url1 = "https://www.facebook.com";
-
+        //String url1 = " https://a63c5a26efd0.ngrok.io/test.html";
 
         myJSWebView.loadUrl(url);
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void sendMsgToWeb(View v) {
         TextView t = (TextView) findViewById(R.id.EditText);
         String s = t.getText().toString();
